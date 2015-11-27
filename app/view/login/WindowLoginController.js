@@ -3,8 +3,8 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 	alias: 'controller.login',
 	requires: [
 		'ToralVirtual.util.Util',
-    'ToralVirtual.view.login.CapsLockTooltip'//,
-    //'ToralVirtual.util.SessionMonitor'
+    'ToralVirtual.view.login.CapsLockTooltip',
+    'ToralVirtual.util.SessionMonitor'
 	],
 	onTextFieldSpecialKey: function(field, e, options){
 
@@ -92,6 +92,6 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 		Ext.create({
 			xtype: 'app-main'
 		});
-
+		ToralVirtual.util.SessionMonitor.start();
 	}
 });

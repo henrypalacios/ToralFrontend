@@ -67,8 +67,14 @@
      *      ]
      */
     "requires": [
-        "font-awesome"
+        "font-awesome",
+        "ext-locale",
+        "charts",
+        "font-awesome",
+        "ux"
     ],
+
+    "locale": "es",
 
     /**
      * Fashion build configuration properties.
@@ -223,7 +229,8 @@
         {
             "path": "app.js",
             "bundle": true
-        },{
+        },
+        {
         "path": "app/CustomVTypes.js",
         "includeInBundle": true
         }

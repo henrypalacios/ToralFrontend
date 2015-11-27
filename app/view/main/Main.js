@@ -6,106 +6,101 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('ToralVirtual.view.main.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.container.Viewport',
     xtype: 'app-main',
 
     requires: [
-        'Ext.plugin.Viewport',
-        'Ext.window.MessageBox',
-
-        'ToralVirtual.view.main.MainController',
-        'ToralVirtual.view.main.MainModel',
-        'ToralVirtual.view.main.List'
+        'Ext.list.Tree'
     ],
 
     controller: 'main',
-    viewModel: 'main',
-    plugins: 'viewport',
 
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list',
-        items: [{
-            xtype: 'button',
-            text: 'Salir',
-            margin: '10 0',
-            handler: 'onClickButton'
-        }]
+    viewModel: {
+        type: 'mainviewport'
     },
 
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
+    cls: 'sencha-dash-viewport',
+    itemId: 'mainView',
+
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
     },
 
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
+    listeners: {
+        render: 'onMainViewRender'
     },
 
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
+    items:[
+        {
+            xtype: 'toolbar',
+            cls: 'sencha-dash-dash-headerbar toolbar-btn-shadow',
+            height: 55,
+            width:250,
+            itemId: 'headerBar',
+            items: [
+                {
+                    xtype: 'component',
+                    reference: 'senchaLogo',
+                    cls: 'sencha-logo',
+                    html: '<div class="main-logo"><img src="resources/images/avanzada.png">Sistema Electoral</div>',
+                    width: 250
                 },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
+                {
+                    margin: '0 0 0 8',
+                    cls: 'delete-focus-bg',
+                    iconCls:'x-fa fa-navicon',
+                    id: 'main-navigation-btn',
+                    handler: 'onReducirBarraMenu'
+                },
+                {
+                    xtype: 'tbfill' //#9
+                },
+                {
+                    xtype: 'button',
+                    text: 'Salir',
+                    itemId: 'logout',
+                    margin: '10 0',
+                    iconCls: 'fa fa-sign-out fa-lg buttonIcon',
+                    listeners: {
+                        click: 'onLogout'
+                    },
+                    ui:"soft-blue"
                 }
-            }
+            ]
+        },
+        {
+            xtype: 'maincontainerwrap',
+            id: 'main-view-detail-wrap',
+            reference: 'mainContainerWrap',
+            flex: 1,
+            items: [
+                {
+                    xtype: 'treelist',
+                    reference: 'navigationTreeList',
+                    itemId: 'navigationTreeList',
+                    ui: 'navigation',
+                    store: 'NavigationTree',
+                    width: 250,
+                    expanderFirst: false,
+                    expanderOnly: false,
+                    listeners: {
+                        selectionchange: 'onNavigationTreeSelectionChange'
+                    }
+                },
+                {
+                    xtype: 'container',
+                    flex: 1,
+                    reference: 'mainCardPanel',
+                    cls: 'sencha-dash-right-main-container',
+                    itemId: 'contentPanel',
+                    layout: {
+                        type: 'card',
+                        anchor: '100%'
+                    }
+                }
+            ]
         }
-    },
+    ]
 
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
 });

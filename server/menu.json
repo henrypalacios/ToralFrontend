@@ -1,0 +1,60 @@
+{
+    "user":{
+        "id":"1",
+        "nacionalidad":"V",
+        "cedula":"18923923",
+        "usuario":"usuario",
+        "idtipousuario":"2",
+        "tipovalidacion":"0",
+        "nombre":"CINDY",
+        "apellido":"MUJICA",
+        "tlf1":"4143456775",
+        "tlf2":"0",
+        "tipousuario":"Administrador",
+        "estatus":"1"
+    },
+    "items":[
+    {
+        "text":"Activismo",
+        "id":"31",
+        "aplicacionpadre":null,
+        "controller":"",
+        "iconCls":"admin-icon16",
+        "bodyStyle":"background-color: transparent;",
+        "leaf":false,
+        "children":[
+        {
+            "text":"Casa x Casa",
+            "id":"32",
+            "aplicacionpadre":"31",
+            "controller":"MyApp.controller.activismo.casaxcasa.CasaxCasa",
+            "iconCls":"","bodyStyle":"background-color: transparent;",
+            "leaf":true
+        },{
+          "text":"Puntos Progresistas",
+          "id":"39","aplicacionpadre":"31",
+          "controller":"MyApp.controller.activismo.puntoprogresista.PuntoProgresista",
+          "iconCls":"",
+          "bodyStyle":"background-color: transparent;",
+          "leaf":true
+        }]
+    },{
+      "text":"Movilizacion",
+      "id":"34",
+      "aplicacionpadre":null,
+      "controller":"",
+      "iconCls":"admin-icon16",
+      "bodyStyle":"background-color: transparent;",
+      "leaf":false,
+      "children":[
+      {
+          "text":"1 x 10","id":"35",
+          "aplicacionpadre":"34",
+          "controller":"MyApp.controller.movilizacion.unoxdiez.UnoxDiez",
+          "iconCls":"",
+          "bodyStyle":"background-color: transparent;",
+          "leaf":true
+      }]
+    }],
+  "success":true
+}

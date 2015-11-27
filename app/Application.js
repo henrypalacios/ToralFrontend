@@ -9,7 +9,7 @@ Ext.define('ToralVirtual.Application', {
     name: 'ToralVirtual',
 
     stores: [
-        // TODO: add global / shared stores here
+        'NavigationTree'
     ],
 
     views: [
@@ -26,13 +26,13 @@ Ext.define('ToralVirtual.Application', {
         var task = new Ext.util.DelayedTask(function() { 
 
             me.splashscreen.fadeOut({
-                duration: 1000,
+                duration: 1,
                 remove:true
             });
 
             //Fade out the icon and message
             me.splashscreen.next().fadeOut({
-                duration: 1000,
+                duration: 1,
                 remove:true,
                 listeners: { // #1
                     afteranimate: function(el, startTime, eOpts ){//#2
@@ -46,11 +46,27 @@ Ext.define('ToralVirtual.Application', {
 
         });
 
-        task.delay(2000); 
+        task.delay(1); 
 
     },
 
     init: function(){
+
+        this.enmascararPantalla();
+
+    },
+
+    onAppUpdate: function () {
+        Ext.Msg.confirm('Aplicación Actualizada', 'Esta aplicación ha sido actualizada, deseas recargar ahora?',
+            function (choice) {
+                if (choice === 'yes') {
+                    window.location.reload();
+                }
+            }
+        );
+    },
+
+    enmascararPantalla: function() {
         var me = this;
 
         me.splashscreen = Ext.getBody().mask( // #2
@@ -63,15 +79,5 @@ Ext.define('ToralVirtual.Application', {
             cls: 'x-splash-icon'
         });
 
-    },
-
-    onAppUpdate: function () {
-        Ext.Msg.confirm('Aplicación Actualizada', 'Esta aplicación ha sido actualizada, deseas recargar ahora?',
-            function (choice) {
-                if (choice === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
     }
 });

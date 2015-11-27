@@ -34,20 +34,20 @@ Ext.define('ToralVirtual.util.SessionMonitor', {
     buttons: [{
       text: 'Continuar...',
       handler: function() {
-        Ext.TaskManager.stop(Sistema.util.SessionMonitor.countDownTask);
-        Sistema.util.SessionMonitor.window.hide();
-        Sistema.util.SessionMonitor.start();
+        Ext.TaskManager.stop(ToralVirtual.util.SessionMonitor.countDownTask);
+        ToralVirtual.util.SessionMonitor.window.hide();
+        ToralVirtual.util.SessionMonitor.start();
         // 'poke' the server-side to update your session.
-        Ext.Ajax.request({
+/*        Ext.Ajax.request({
           url: 'php/sessionAlive.php'
-        });
+        });*/
       }
     },{
-      text: 'Salir',
+      text: 'Cerrar Session',
       action: 'logout',
       handler: function() {
-        Ext.TaskManager.stop(Sistema.util.SessionMonitor.countDownTask);
-        Sistema.util.SessionMonitor.window.hide();
+        Ext.TaskManager.stop(ToralVirtual.util.SessionMonitor.countDownTask);
+        ToralVirtual.util.SessionMonitor.window.hide();
         
         // find and invoke your app's "Logout" button.
           var btn = Ext.ComponentQuery.query('button#logout')[0];
@@ -135,7 +135,7 @@ Ext.define('ToralVirtual.util.SessionMonitor', {
    * the seconds remaining prior to session expiration.  If the counter expires, you're logged out.
    */
   countDown: function() {
-    this.window.down('label').update('Su sesión expira en ' +  this.remaining + ' segundos ' + ((this.remaining == 1) ? '.' : 's.') );
+    this.window.down('label').update('Su sesión expira en ' +  this.remaining + ' segundos ' + ((this.remaining == 1) ? '.' : '.') );
     
     --this.remaining;
 

@@ -12,7 +12,7 @@ Ext.define('ToralVirtual.view.login.WindowLogin', {
 	layout: {
 		type: 'fit' 
 	},
-	iconCls: 'fa fa-key fa-lg', 
+	iconCls: 'fa fa-user fa-lg', 
 	title: 'Login', 
 	closeAction: 'hide', 
 	closable: false, 
@@ -60,13 +60,15 @@ Ext.define('ToralVirtual.view.login.WindowLogin', {
 					xtype: 'button',
 					text: 'Limpiar',
 					iconCls: 'fa fa-eraser fa-lg',
-					listeners: { click: 'onButtonClickCancel'}
+					listeners: { click: 'onButtonClickCancel'},
+					ui:'soft-blue'
 				}, {
 					xtype: 'button',
 					formBind: true,
 					iconCls: 'fa fa-sign-in fa-lg',
 					text: 'Entrar',
-					listeners: { click: 'onButtonClickSubmit'}
+					listeners: { click: 'onButtonClickSubmit'},
+					ui:'soft-blue'
 				}]
 			}]
 		}
