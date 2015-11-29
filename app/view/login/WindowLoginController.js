@@ -64,20 +64,7 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 
 		console.log(action); //Arreglar problema de Errores de mensaje en respuestua de servidor
 
-		var result = ToralVirtual.util.Util.decodeJSON(action.response.responseText);
-
-		switch (action.failureType) {
-			case Ext.form.action.Action.CLIENT_INVALID: //#5
-				ToralVirtual.util.Util.showErrorMsg('Los campos del formulario no podrán enviarse con valores no válidos');
-			break;
-
-			case Ext.form.action.Action.CONNECT_FAILURE: 
-				ToralVirtual.util.Util.showErrorMsg(action.response.responseText);
-			break;
-
-			case Ext.form.action.Action.SERVER_INVALID: 
-				ToralVirtual.util.Util.showErrorMsg(result.msg);
-		}
+        ToralVirtual.util.Util.handleFormFailure(action);
 
 	},
 	onLoginSuccess: function(form, action) {
