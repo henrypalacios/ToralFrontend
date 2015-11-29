@@ -49,7 +49,7 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 		
 		form.submit({
 			clientValidation: true,
-			url: 'server/doLogin.json',
+			url: ToralVirtual.util.Global.getProduccion() ? '/auth/login' : 'server/doLogin.json',
 			scope: me, //Alcance sobre me
 			params: {
 				newStatus: 'delivered'

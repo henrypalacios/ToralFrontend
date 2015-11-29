@@ -10,7 +10,8 @@ Ext.define('ToralVirtual.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
-        'Ext.list.Tree'
+        'Ext.list.Tree',
+        'ToralVirtual.util.Global'
     ],
 
     controller: 'main',
@@ -43,7 +44,7 @@ Ext.define('ToralVirtual.view.main.Main', {
                     xtype: 'component',
                     reference: 'senchaLogo',
                     cls: 'sencha-logo',
-                    html: '<div class="main-logo"><img src="resources/images/avanzada.png">Sistema Electoral</div>',
+                    html: '<div class="main-logo"><img src="'+ToralVirtual.util.Global.getPathIMG()+'resources/images/avanzada.png">Sistema Electoral</div>',
                     width: 250
                 },
                 {

@@ -5,55 +5,25 @@
  */
 Ext.define('ToralVirtual.Application', {
     extend: 'Ext.app.Application',
-    
+
     name: 'ToralVirtual',
 
     stores: [
         'NavigationTree'
     ],
 
+    defaultToken : 'home',
+
     views: [
-        'ToralVirtual.view.login.WindowLogin',
-        'ToralVirtual.view.main.Main'
+        'ToralVirtual.view.login.WindowLogin'
     ],
-    
+
     launch: function () {
-        var me = this;
-        var loggedIn;
-
-        loggedIn = localStorage.getItem("ToralLoggedIn");
-
-        var task = new Ext.util.DelayedTask(function() { 
-
-            me.splashscreen.fadeOut({
-                duration: 1,
-                remove:true
-            });
-
-            //Fade out the icon and message
-            me.splashscreen.next().fadeOut({
-                duration: 1,
-                remove:true,
-                listeners: { // #1
-                    afteranimate: function(el, startTime, eOpts ){//#2
-                                Ext.create({
-                                    xtype: loggedIn ? 'app-main' : 'login'
-                                });
-                    }
-                }
-            });
-
-
-        });
-
-        task.delay(1); 
-
+        this.removerMascara();
     },
 
     init: function(){
-
         this.enmascararPantalla();
-
     },
 
     onAppUpdate: function () {
@@ -64,6 +34,56 @@ Ext.define('ToralVirtual.Application', {
                 }
             }
         );
+    },
+
+    createApplication: function(view) {
+        Ext.create({
+            xtype: view
+        });
+    },
+
+    loggedIn: function(){
+        var me = this;
+
+        Ext.Ajax.request({
+            url: '/auth/loggedin',
+            method:'GET',
+            success:function(response){
+                action.resume();
+                me.createApplication('app-main');
+            },
+            failure:function() {
+                me.createApplication('login');
+                me.redirectTo('login',false);
+            }
+        });
+    },
+
+    removerMascara: function (){
+        var me=this,
+            task;
+
+        task = new Ext.util.DelayedTask(function () {
+
+            me.splashscreen.fadeOut({
+                duration: 1,
+                remove: true
+            });
+
+            //Fade out the icon and message
+            me.splashscreen.next().fadeOut({
+                duration: 1,
+                remove: true,
+                listeners: { // #1
+                    afteranimate: function (el, startTime, eOpts) {
+                        me.loggedIn();
+                    }
+                }
+            });
+
+        });
+
+        task.delay(2);
     },
 
     enmascararPantalla: function() {
