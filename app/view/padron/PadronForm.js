@@ -12,5 +12,61 @@ Ext.define("ToralVirtual.view.padron.PadronForm",{
         type: "padron-padronform"
     },
 
-    html: "Padrón"
+    items: [{
+        xtype   : 'container',
+        layout  : 'vbox',
+        width   : '100%',
+        padding : '20',
+        items   : [{
+            xtype: 'fieldset',
+            title: 'Datos-Centro de Votación',
+            layout: 'hbox',
+            width: '100%',
+            defaults: { 
+                xtype: 'combobox',
+                allowBlank: false,
+                forceSelection:true,
+                margin: '0 5 5 0',
+                labelAlign: 'top',
+                msgTarget: 'side'
+            },
+            items: [{
+                fieldLabel  : 'Municipio:',
+                name        : 'municipio',
+                emptyText   :'Seleccionar',
+                queryMode   : 'remote',
+                editable    : false,
+                /*store       : {
+                    type: 'municipio'
+                },*/
+                width       : '20%',
+                valueField  : 'id',
+                displayField: 'nombre'
+            },{
+                fieldLabel  : 'Parroquia:',
+                name        : 'parroquia',
+                emptyText   :'Seleccionar',
+                queryMode   : 'local',
+                editable    : false,
+                //disabled    : true,
+                //store       : Ext.create('MyApp.store.Parroquia'),
+                width       : '20%',
+                valueField: 'id',
+                displayField: 'nombre'
+            },{
+                fieldLabel  : 'Centro de Votación:',
+                name        : 'centro',
+                emptyText   :'Seleccionar',
+                queryMode   : 'local',
+                editable    : false,
+                //disabled    : true,
+                //store       : Ext.create('MyApp.store.CentroVotacion'),
+                width       : '60%',
+                valueField  : 'id',
+                displayField: 'nombre'
+            }]
+        },{
+
+        }]
+    }]
 });
