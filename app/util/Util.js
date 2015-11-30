@@ -14,12 +14,13 @@ Ext.define('ToralVirtual.util.Util', {
                 texto = "<h2>Revisar la conexión del equipo, no se ha podido comunicar con el servidor Remoto</h2>";
             }
 
-            Ext.Msg.show({
+            Ext.MessageBox.show({
 				title:'Error!',
 				msg: texto,
                 maxWidth : '100%',
-				icon: Ext.Msg.ERROR,
-				buttons: Ext.Msg.OK
+				icon: Ext.MessageBox.ERROR,
+				buttons: Ext.MessageBox.OK,
+                scrollable :false
 			});
 		},
 
@@ -41,6 +42,16 @@ Ext.define('ToralVirtual.util.Util', {
                 case Ext.form.action.Action.SERVER_INVALID:
                     me.showErrorMsg(result.msg);
             }
+        },
+
+        showToast: function(text) {
+            Ext.toast({
+                html: text,
+                closable: false,
+                align: 't',
+                slideInDuration: 400,
+                minWidth: 400
+            });
         }
 	}
 });

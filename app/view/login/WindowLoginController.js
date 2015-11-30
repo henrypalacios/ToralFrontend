@@ -62,7 +62,7 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 	onLoginFailure: function(form, action) {
 		this.getView().unmask();
 
-		console.log(action); //Arreglar problema de Errores de mensaje en respuestua de servidor
+		console.log(form); //Arreglar problema de Errores de mensaje en respuestua de servidor
 
         ToralVirtual.util.Util.handleFormFailure(action);
 
@@ -73,8 +73,7 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 
 		localStorage.setItem("ToralLoggedIn", true);
 
-		this.getView().destroy(); 
-		//Sistema.util.SessionMonitor.start();
+		this.getView().destroy();
 
 		Ext.create({
 			xtype: 'app-main'

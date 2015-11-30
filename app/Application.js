@@ -24,6 +24,7 @@ Ext.define('ToralVirtual.Application', {
 
     init: function(){
         this.enmascararPantalla();
+        this.agregarCsrfToken();
     },
 
     onAppUpdate: function () {
@@ -99,5 +100,32 @@ Ext.define('ToralVirtual.Application', {
             cls: 'x-splash-icon'
         });
 
+    },
+
+    agregarCsrfToken: function(){
+        var csrfToken = this.getTokenMeta();
+        Ext.data.Connection.override({
+
+            request: function(options){
+                var me = this;
+                if(!options.params)
+                    options.params = {};
+                options.params._token = csrfToken;
+
+                return me.callOverridden(arguments);
+            }
+        });
+    },
+
+    getTokenMeta: function() {
+        var metas = document.getElementsByTagName('meta');
+
+        for (i=0; i<metas.length; i++) {
+            if (metas[i].getAttribute("name") == "_token") {
+                return metas[i].getAttribute("content");
+            }
+        }
+
     }
+
 });
