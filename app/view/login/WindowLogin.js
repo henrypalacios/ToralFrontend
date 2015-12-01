@@ -9,7 +9,6 @@ Ext.define('ToralVirtual.view.login.WindowLogin', {
 	autoShow: true, 
 	height: 200, 
 	width: 360,
-	modal:true,
 	layout: {
 		type: 'fit' 
 	},
