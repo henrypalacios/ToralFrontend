@@ -44,7 +44,7 @@ Ext.define('ToralVirtual.view.main.Main', {
                     xtype: 'component',
                     reference: 'senchaLogo',
                     cls: 'sencha-logo',
-                    html: '<div class="main-logo"><img src="app/resources/images/avanzada.png">Sistema Electoral</div>',
+                    html: '<div class="main-logo"><img src="resources/images/avanzada.png">Sistema Electoral</div>',
                     width: 250
                 },
                 {
@@ -83,6 +83,7 @@ Ext.define('ToralVirtual.view.main.Main', {
                     ui: 'navigation',
                     store: 'NavigationTree',
                     width: 250,
+                    bind: '{data}',
                     expanderFirst: false,
                     expanderOnly: false,
                     listeners: {

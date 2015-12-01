@@ -2,8 +2,10 @@ Ext.define('ToralVirtual.store.NavigationTree', {
     extend: 'Ext.data.TreeStore',
 
     storeId: 'NavigationTree',
-    autoload : true,
-    root: {
+
+    autoLoad:true,
+
+/*    root: {
         expanded: true,
         children: [
             {
@@ -22,10 +24,23 @@ Ext.define('ToralVirtual.store.NavigationTree', {
 
             }
         ]
-    },
+    },*/
+
     fields: [
         {
             name: 'text'
         }
-    ]
+    ],
+
+    proxy:{
+        type: 'ajax',
+        url: 'server/navigationItems.json',
+
+        reader:{
+            type: 'json',
+            rootProperty: 'data',
+            totalProperty: 'total'
+        }
+    }
+
 });

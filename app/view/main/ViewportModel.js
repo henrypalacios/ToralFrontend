@@ -1,4 +1,4 @@
-Ext.define('Admin.view.main.ViewportModel', {
+Ext.define('ToralVirtual.view.main.ViewportModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.mainviewport',
 
