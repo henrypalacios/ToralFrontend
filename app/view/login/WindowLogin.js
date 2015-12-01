@@ -9,6 +9,7 @@ Ext.define('ToralVirtual.view.login.WindowLogin', {
 	autoShow: true, 
 	height: 200, 
 	width: 360,
+	modal:true,
 	layout: {
 		type: 'fit' 
 	},
@@ -41,7 +42,7 @@ Ext.define('ToralVirtual.view.login.WindowLogin', {
 					name: 'clave',
 					fieldLabel: 'Contraseña',
 					maxLength: 20,
-					vtype: 'clavePermitida',
+					//vtype: 'clavePermitida',
 					msgTarget: 'side',
 					id: 'password', //ID para evento de CapsLock 
 					enableKeyEvents: true,

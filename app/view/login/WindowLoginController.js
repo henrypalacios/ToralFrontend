@@ -3,8 +3,8 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 	alias: 'controller.login',
 	requires: [
 		'ToralVirtual.util.Util',
-    'ToralVirtual.view.login.CapsLockTooltip',
-    'ToralVirtual.util.SessionMonitor'
+    	'ToralVirtual.view.login.CapsLockTooltip',
+    	'ToralVirtual.util.SessionMonitor'
 	],
 	onTextFieldSpecialKey: function(field, e, options){
 
@@ -62,16 +62,12 @@ Ext.define('ToralVirtual.view.login.WindowLoginController', {
 	onLoginFailure: function(form, action) {
 		this.getView().unmask();
 
-		console.log(form); //Arreglar problema de Errores de mensaje en respuestua de servidor
-
         ToralVirtual.util.Util.handleFormFailure(action);
 
 	},
 	onLoginSuccess: function(form, action) {
 
 		this.getView().unmask();
-
-		localStorage.setItem("ToralLoggedIn", true);
 
 		this.getView().destroy();
 

@@ -148,15 +148,30 @@ Ext.define('ToralVirtual.view.main.MainController', {
     },
 
     onLogout: function () {
-        // Remove the localStorage key/value
-        localStorage.removeItem('ToralLoggedIn');
+        var me = this;
 
-        // Remove Main View
-        this.getView().destroy();
-
-        // Add the Login Window
-        Ext.create({
-            xtype: 'login'
+        Ext.Ajax.request({
+            url: '/auth/logout',
+            scope: me,
+            method:'GET',
+            success: 'onLogoutSuccess',
+            failure: function(conn, response, options, eOpts){
+                var data = ToralVirtual.util.Util.decodeJSON(response.responseText);
+                ToralVirtual.util.Util.showErrorMsg(data);
+            }
         });
+
+    },
+
+    onLogoutSuccess: function(conn, response, options, eOpts){
+        var result = ToralVirtual.util.Util.decodeJSON(conn.responseText);
+
+        if (result.success) {
+            this.getView().destroy();
+            window.location.reload();
+        } else {
+            ToralVirtual.util.Util.showErrorMsg(result.msg); //#5
+        }
+
     }
 });

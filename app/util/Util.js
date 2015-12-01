@@ -9,6 +9,7 @@ Ext.define('ToralVirtual.util.Util', {
 			}
 			return result;
 		},
+
 		showErrorMsg: function (texto) {
 			if (texto === ""){
                 texto = "<h2>Revisar la conexión del equipo, no se ha podido comunicar con el servidor Remoto</h2>";

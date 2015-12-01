@@ -45,13 +45,21 @@ Ext.define('ToralVirtual.Application', {
 
     loggedIn: function(){
         var me = this;
-
+        var app;
         Ext.Ajax.request({
             url: '/auth/loggedin',
             method:'GET',
             success:function(response){
-                action.resume();
-                me.createApplication('app-main');
+                var data = ToralVirtual.util.Util.decodeJSON(response.responseText);
+
+                if (data.loggedin)
+                    app = 'app-main';
+                else {
+                    app = 'login';
+                    me.redirectTo('login',false);
+                }
+                me.createApplication(app);
+
             },
             failure:function() {
                 me.createApplication('login');
