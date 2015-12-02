@@ -9,7 +9,16 @@ Ext.application({
     extend: 'ToralVirtual.Application',
 
     requires: [
-        'ToralVirtual.view.main.Main'
+        'ToralVirtual.view.main.Main',
+        'ToralVirtual.view.main.ViewportModel',
+        'ToralVirtual.view.main.MainController',
+        'ToralVirtual.view.padron.PadronForm',
+        'ToralVirtual.view.main.MainContainerWrap',
+        'ToralVirtual.view.llamadas.LlamadasList',
+        'ToralVirtual.view.llamadas.form.ComboEventos',
+        'ToralVirtual.view.llamadas.ListLlamadasGrid',
+        'ToralVirtual.store.llamadas.ListaLlamadas',
+        'ToralVirtual.store.llamadas.Eventos'
     ],
 
     autoCreateViewport: false
