@@ -1,0 +1,21 @@
+{
+  "success": "true",
+  "total": 2,
+  "data": [
+    {
+      "text": "Padrón Electoral",
+      "view": "padron.PadronForm",
+      "leaf": true,
+      "iconCls": "right-icon x-fa fa-users",
+      "routeId": "padron"
+    },
+    {
+      "text": "Llamadas",
+      "view": "llamadas.LlamadasList",
+      "iconCls": "right-icon x-fa fa-phone",
+      "leaf": true,
+      "routeId": "llamadas"
+    }
+  ]
+
+}

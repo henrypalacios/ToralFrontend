@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "total": 4,
+  "data": [
+    {
+      "nombre": "Uno",
+      "id":1
+    },
+    {
+      "nombre": "Dos",
+      "id":2
+    },
+    {
+      "nombre": "Tres",
+      "id":3
+    },
+    {
+      "nombre": "Cuatro",
+      "id":4
+    }
+  ]
+}

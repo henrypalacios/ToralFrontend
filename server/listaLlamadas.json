@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "total": 4,
+  "data": [
+    {
+      "nombre": "Henry",
+      "apellido":"Palacios",
+      "cedula" : 19727915,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "nota": "Probando Todo",
+      "asistencia": 1,
+      "idcentro" : 110101001
+    },
+    {
+      "nombre": "Cindy",
+      "apellido":"Palacios",
+      "cedula" : 18923923,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "nota": "Probandooooooooo",
+      "asistencia": 0,
+      "idcentro" : 110203005
+    },
+    {
+      "nombre": "Henry",
+      "apellido":"Palacios",
+      "cedula" : 123456,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "nota": "Jueeeeeeeeee",
+      "asistencia": 1,
+      "idcentro" : 110506005
+    },
+    {
+      "nombre": "Henry",
+      "apellido":"Palacios",
+      "cedula" : 123,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "nota": "Probando Todo",
+      "asistencia": 0,
+      "idcentro" : 110708009
+    }
+  ]
+}
