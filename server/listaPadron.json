@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "total": 4,
+  "data": [
+    {
+      "idcargo": 1,
+      "cargo": "Coordinador",
+      "nombre": "Henry",
+      "apellido":"Palacios",
+      "cedula" : 19727915,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "direccion" : "jueeeeeeeeeeeeeeeeee eeeeeeeeeeeeeedddddddd ddddddddd",
+      "email" : "cindy@gmail.com"
+    },
+    {
+      "idcargo": 2,
+      "cargo": "Testigo Principal",
+      "nombre": "Cindy",
+      "apellido":"Palacios",
+      "cedula" : 18923923,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "direccion" : "jueeeeeeeeeeeeeeeeee eeeeeeeeeeeeeedddddddd ddddddddd",
+      "email" : "cindy@gmail.com"
+    },
+    {
+      "idcargo": 3,
+      "cargo": "Testigo Suplente 1",
+      "nombre": "Henry",
+      "apellido":"Palacios",
+      "cedula" : 123456,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "direccion" : "jueeeeeeeeeeeeeeeeee eeeeeeeeeeeeeedddddddd ddddddddd",
+      "email" : "cindy@gmail.com"
+    },
+    {
+      "idcargo": 4,
+      "cargo": "Testigo Suplente 2",
+      "nombre": "Henry",
+      "apellido":"Palacios",
+      "cedula" : 123,
+      "tlf1" : 2518080157,
+      "tlf2" : 4265505089,
+      "direccion" : "jueeeeeeeeeeeeeeeeee eeeeeeeeeeeeeedddddddd ddddddddd",
+      "email" : "cindy@gmail.com"
+    }
+  ]
+}

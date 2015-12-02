@@ -4,7 +4,11 @@ Ext.define("ToralVirtual.view.padron.PadronForm",{
 
     requires: [
         "ToralVirtual.view.padron.PadronFormController",
-        "ToralVirtual.view.padron.PadronFormModel"
+        "ToralVirtual.view.padron.PadronFormModel",
+        "ToralVirtual.view.padron.PadronGrid",
+        "ToralVirtual.view.padron.form.ComboMunicipio",
+        "ToralVirtual.view.padron.form.ComboParroquia",
+        "ToralVirtual.view.padron.form.ComboCentroVotacion"
     ],
 
     controller: "padron-padronform",
@@ -31,42 +35,18 @@ Ext.define("ToralVirtual.view.padron.PadronForm",{
                 msgTarget: 'side'
             },
             items: [{
-                fieldLabel  : 'Municipio:',
-                name        : 'municipio',
-                emptyText   :'Seleccionar',
-                queryMode   : 'remote',
-                editable    : false,
-                /*store       : {
-                    type: 'municipio'
-                },*/
-                width       : '20%',
-                valueField  : 'id',
-                displayField: 'nombre'
+                xtype       : 'combomunicipio',
+                width       : '20%'
             },{
-                fieldLabel  : 'Parroquia:',
-                name        : 'parroquia',
-                emptyText   :'Seleccionar',
-                queryMode   : 'local',
-                editable    : false,
+                xtype       : 'comboparroquia',
                 //disabled    : true,
-                //store       : Ext.create('MyApp.store.Parroquia'),
                 width       : '20%',
-                valueField: 'id',
-                displayField: 'nombre'
             },{
-                fieldLabel  : 'Centro de Votación:',
-                name        : 'centro',
-                emptyText   :'Seleccionar',
-                queryMode   : 'local',
-                editable    : false,
-                //disabled    : true,
-                //store       : Ext.create('MyApp.store.CentroVotacion'),
+                xtype       : 'combocentro',
                 width       : '60%',
-                valueField  : 'id',
-                displayField: 'nombre'
             }]
         },{
-
+            xtype:'gridpadron'
         }]
     }]
 });
