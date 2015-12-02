@@ -13,7 +13,7 @@ Ext.define('ToralVirtual.store.llamadas.ListaLlamadas', {
         {name:'idcentro', type:'int'},
         {name:'tlf1', type:'int'},
         {name:'tlf2', type:'int'},
-        {name:'tlf2', type:'int'}
+        {name:'nombrecargo'}
     ],
 
     proxy:{

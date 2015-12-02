@@ -12,13 +12,20 @@ Ext.application({
         'ToralVirtual.view.main.Main',
         'ToralVirtual.view.main.ViewportModel',
         'ToralVirtual.view.main.MainController',
-        'ToralVirtual.view.padron.PadronForm',
         'ToralVirtual.view.main.MainContainerWrap',
+        'ToralVirtual.view.main.PanelBase',
+
+        'ToralVirtual.view.padron.PadronForm',
+        'ToralVirtual.store.Municipio',
+        'ToralVirtual.store.Parroquia',
+        'ToralVirtual.store.padron.ListaPadron',
+        'ToralVirtual.store.CentroVotacion',
+
         'ToralVirtual.view.llamadas.LlamadasList',
         'ToralVirtual.view.llamadas.form.ComboEventos',
         'ToralVirtual.view.llamadas.ListLlamadasGrid',
-        'ToralVirtual.store.llamadas.ListaLlamadas',
-        'ToralVirtual.store.llamadas.Eventos'
+        'ToralVirtual.store.llamadas.Eventos',
+        'ToralVirtual.store.llamadas.ListaLlamadas'
     ],
 
     autoCreateViewport: false

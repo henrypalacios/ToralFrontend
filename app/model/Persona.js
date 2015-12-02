@@ -1,5 +1,5 @@
 Ext.define('ToralVirtual.model.Persona',{
-	extend: 'Ext.data.Model',
+	extend: 'Ext.data.Model'/*,
 	fields: [
 		{name: 'cedula', type: 'int'},
 		'nombre',
@@ -34,5 +34,11 @@ Ext.define('ToralVirtual.model.Persona',{
 		'tlf2',
 		'direccion',
 		'email'
-	]
+	],
+
+	extraerCodigoTlf:function(){
+
+		return 1
+	}*/
+
 });

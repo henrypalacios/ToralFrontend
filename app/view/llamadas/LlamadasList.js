@@ -1,6 +1,8 @@
 
 Ext.define("ToralVirtual.view.llamadas.LlamadasList",{
-    extend: "Ext.panel.Panel",
+    extend: "ToralVirtual.view.main.PanelBase",
+
+    xtype: 'llamadaspanel',
 
     requires: [
         'ToralVirtual.view.llamadas.LlamadasListController',
@@ -14,13 +16,13 @@ Ext.define("ToralVirtual.view.llamadas.LlamadasList",{
         type: "llamadas-llamadaslist"
     },
     //title:'Panel de Llamadas',
-    padding:5,
+/*    padding:5,
 
     layout: {
         type: 'vbox',
         pack: 'start',
         align: 'stretch'
-    },
+    },*/
 
     tbar:[
         {

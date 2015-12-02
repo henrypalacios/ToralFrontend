@@ -21,7 +21,8 @@ Ext.define('ToralVirtual.view.padron.PadronGrid', {
                 {header: 'Apellido',        dataIndex: 'apellido',      align: 'justyfi'},
                 {header: 'Telf. Local',     dataIndex: 'tlf1',          align: 'center'},
                 {header: 'Telf. Celular',   dataIndex: 'tlf2',          align: 'center'},
-                {header: 'Dirección',       dataIndex: 'direccion',     align: 'justyfi'},
+                {header: 'Dirección',       dataIndex: 'direccion',     align: 'justyfi',
+                    flex:1},
                 {header: 'Email',           dataIndex: 'email',         align: 'justyfi'}
             ],
 

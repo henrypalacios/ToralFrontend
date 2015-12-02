@@ -14,19 +14,29 @@ Ext.define('ToralVirtual.view.llamadas.ListLlamadasGrid', {
             store:llamadas,
 
             columns:[
-            {header: 'Centro',          dataIndex: 'idcentro',      align: 'center',    renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'Cargo',           dataIndex: 'cargo',         align: 'center',    width:150, renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'C&eacute;dula',   dataIndex: 'cedula',        align: 'center',    filter: {field: {xtype: 'cleartextfield'}, test: '/{0}/i'}, renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'Nombre',          dataIndex: 'nombre',        align: 'justyfi',   width:240, renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'Telf. Local',     dataIndex: 'tlf1',          align: 'center',    filter: {field: {xtype: 'cleartextfield'}, test: '/{0}/i'}, renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'Telf. Celular',   dataIndex: 'tlf2',          align: 'center',    filter: {field: {xtype: 'cleartextfield'}, test: '/{0}/i'}, renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'Nota',            dataIndex: 'nota',          align: 'justyfi',   flex:1, renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
-            {header: 'Asistencia',      dataIndex: 'asistencia',    align: 'center',    renderer: function(v){ return ('<SPAN class="ajustar-texto-grid">'+v+'</SPAN>')}},
+            {header: 'Centro',          dataIndex: 'idcentro',      align: 'center'},
+            {header: 'Cargo',           dataIndex: 'nombrecargo',   align: 'center',
+                width:150},
+            {header: 'Cédula',          dataIndex: 'cedula',        align: 'center'},
+            {header: 'Nombre',          dataIndex: 'nombre',        align: 'justyfi',
+                width:240},
+            {header: 'Telf. Local',     dataIndex: 'tlf1',          align: 'center'},
+            {header: 'Telf. Celular',   dataIndex: 'tlf2',          align: 'center'},
+            {header: 'Nota',            dataIndex: 'nota',          align: 'justyfi',
+                flex:1},
+            {header: 'Asistencia',      dataIndex: 'asistencia',    align: 'center',
+                renderer: function(value, metaData, record){
+                    if (value){
+                        return '<i class="fa fa-check"></i>'
+                    }
+                }
+            },
             {
                 xtype:'actioncolumn',
-                width:50,
+                menuDisabled:true,
+                width:25,
                 items: [{
-                    iconCls: 'x-fa fa-phone-square',  // Use a URL in the icon config
+                    icon: 'resources/images/img_24/phone.png',  // Use a URL in the icon config
                     tooltip: 'Realizar Llamada',
                     handler: function(grid, rowIndex, colIndex) {
                         var rec = grid.getStore().getAt(rowIndex);

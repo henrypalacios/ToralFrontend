@@ -10,7 +10,8 @@
       "tlf2" : 4265505089,
       "nota": "Probando Todo",
       "asistencia": 1,
-      "idcentro" : 110101001
+      "idcentro" : 110101001,
+      "nombrecargo": "Testigo Principal"
     },
     {
       "nombre": "Cindy",
@@ -20,27 +21,30 @@
       "tlf2" : 4265505089,
       "nota": "Probandooooooooo",
       "asistencia": 0,
-      "idcentro" : 110203005
+      "idcentro" : 110203005,
+      "nombrecargo": "Testigo Suplente 1"
     },
     {
-      "nombre": "Henry",
+      "nombre": "Patricia",
       "apellido":"Palacios",
       "cedula" : 123456,
       "tlf1" : 2518080157,
       "tlf2" : 4265505089,
       "nota": "Jueeeeeeeeee",
       "asistencia": 1,
-      "idcentro" : 110506005
+      "idcentro" : 110506005,
+      "nombrecargo": "Testigo Suplente 2"
     },
     {
-      "nombre": "Henry",
+      "nombre": "Zenaira",
       "apellido":"Palacios",
       "cedula" : 123,
       "tlf1" : 2518080157,
       "tlf2" : 4265505089,
       "nota": "Probando Todo",
       "asistencia": 0,
-      "idcentro" : 110708009
+      "idcentro" : 110708009,
+      "nombrecargo": "Coordinador de Centro"
     }
   ]
 }
