@@ -1,3 +1,3 @@
 // @tag full-page
-// @require D:\xampp\htdocs\DESARROLLO\frontend\app.js
-// @require D:\xampp\htdocs\DESARROLLO\frontend\app\CustomVTypes.js
+// @require /home/vagrant/Code/ToralFrontend/app.js
+// @require /home/vagrant/Code/ToralFrontend/app/CustomVTypes.js

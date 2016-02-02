@@ -24,7 +24,7 @@ Ext.define('ToralVirtual.Application', {
 
     init: function(){
         this.enmascararPantalla();
-        this.agregarCsrfToken();
+        //this.agregarCsrfToken();
     },
 
     onAppUpdate: function () {
@@ -85,7 +85,7 @@ Ext.define('ToralVirtual.Application', {
                 remove: true,
                 listeners: { // #1
                     afteranimate: function (el, startTime, eOpts) {
-                        me.loggedIn();
+                      me.createApplication('app-main');
                     }
                 }
             });

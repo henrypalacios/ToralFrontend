@@ -64,7 +64,7 @@ Ext.define("ToralVirtual.view.llamadas.LlamadasList",{
                 height:'100%'
             }]
         }
-    ],
+    ]
 
 
 });

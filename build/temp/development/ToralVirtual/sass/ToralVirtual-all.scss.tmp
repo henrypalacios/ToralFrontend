@@ -1,7 +1,6 @@
 $app-name:  dynamic( 'ToralVirtual' );
-$image-search-path: 'D:/projects/Homestead/Code/frontend/build/development/ToralVirtual/resources';
+$image-search-path: '/home/vagrant/Code/ToralFrontend/build/development/ToralVirtual/resources';
 $theme-name:  dynamic( 'theme-triton' );
-$include-admin-view-main-viewportmodel: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -1140,23 +1139,42 @@ $include-ext-window-messagebox: dynamic(true);;
 $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-toralvirtual-application: dynamic(true);;
+$include-toralvirtual-model-model: dynamic(true);;
+$include-toralvirtual-model-persona: dynamic(true);;
+$include-toralvirtual-model-padron-listapadron: dynamic(true);;
+$include-toralvirtual-store-centrovotacion: dynamic(true);;
 $include-toralvirtual-store-menu: dynamic(true);;
+$include-toralvirtual-store-municipio: dynamic(true);;
 $include-toralvirtual-store-navigationtree: dynamic(true);;
+$include-toralvirtual-store-parroquia: dynamic(true);;
 $include-toralvirtual-store-personnel: dynamic(true);;
+$include-toralvirtual-store-llamadas-eventos: dynamic(true);;
+$include-toralvirtual-store-llamadas-listallamadas: dynamic(true);;
+$include-toralvirtual-store-padron-listapadron: dynamic(true);;
+$include-toralvirtual-util-global: dynamic(true);;
 $include-toralvirtual-util-sessionmonitor: dynamic(true);;
 $include-toralvirtual-util-util: dynamic(true);;
+$include-toralvirtual-view-llamadas-listllamadasgrid: dynamic(true);;
 $include-toralvirtual-view-llamadas-llamadaslist: dynamic(true);;
 $include-toralvirtual-view-llamadas-llamadaslistcontroller: dynamic(true);;
 $include-toralvirtual-view-llamadas-llamadaslistmodel: dynamic(true);;
+$include-toralvirtual-view-llamadas-form-comboeventos: dynamic(true);;
 $include-toralvirtual-view-login-capslocktooltip: dynamic(true);;
 $include-toralvirtual-view-login-windowlogin: dynamic(true);;
 $include-toralvirtual-view-login-windowlogincontroller: dynamic(true);;
 $include-toralvirtual-view-main-main: dynamic(true);;
 $include-toralvirtual-view-main-maincontainerwrap: dynamic(true);;
 $include-toralvirtual-view-main-maincontroller: dynamic(true);;
+$include-toralvirtual-view-main-panelbase: dynamic(true);;
+$include-toralvirtual-view-main-viewportmodel: dynamic(true);;
 $include-toralvirtual-view-padron-padronform: dynamic(true);;
 $include-toralvirtual-view-padron-padronformcontroller: dynamic(true);;
 $include-toralvirtual-view-padron-padronformmodel: dynamic(true);;
+$include-toralvirtual-view-padron-padrongrid: dynamic(true);;
+$include-toralvirtual-view-padron-form-combocentrovotacion: dynamic(true);;
+$include-toralvirtual-view-padron-form-combomunicipio: dynamic(true);;
+$include-toralvirtual-view-padron-form-comboparroquia: dynamic(true);;
+$include-toralvirtual-view-padron-form-topbuttons: dynamic(true);;
 $output-paths: ("path": "../resources");
 
 /* ======================== ETC ======================== */
@@ -1446,8 +1464,8 @@ $ToralVirtual-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $ToralVirtual-resource-root;
 $relative-image-path-for-uis: $ToralVirtual-resource-path;
-@import '../../../../../sass/var/view/main/Main';
 @import '../../../../../sass/var/Application';
+@import '../../../../../sass/var/view/main/Main';
 
 
 /* ======================== RULE ======================== */

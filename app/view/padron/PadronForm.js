@@ -40,7 +40,7 @@ Ext.define("ToralVirtual.view.padron.PadronForm",{
                     title: 'Datos-Centro de Votación',
                     layout: 'hbox',
                     width: '100%',
-                    defaults: { 
+                    defaults: {
                         allowBlank: false,
                         forceSelection:true,
                         margin: '0 5 5 0',
@@ -54,10 +54,10 @@ Ext.define("ToralVirtual.view.padron.PadronForm",{
                         },{
                             xtype       : 'comboparroquia',
                             //disabled    : true,
-                            width       : '20%',
+                            width       : '20%'
                         },{
                             xtype       : 'combocentro',
-                            width       : '60%',
+                            width       : '60%'
                         }
                     ]
                 },
@@ -98,7 +98,7 @@ Ext.define("ToralVirtual.view.padron.PadronForm",{
             title: 'Datos-Centro de Votación',
             layout: 'hbox',
             width: '100%',
-            defaults: { 
+            defaults: {
                 xtype: 'combobox',
                 allowBlank: false,
                 forceSelection:true,
